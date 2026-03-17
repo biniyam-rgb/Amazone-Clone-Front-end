@@ -1,9 +1,10 @@
 import React from 'react'
+import Header from './Component/Header/Header'
 
 export default function App() {
   return (
     <div>
-      <h1>amazone clone</h1>
+      <Header/>
     </div>
   )
 }
