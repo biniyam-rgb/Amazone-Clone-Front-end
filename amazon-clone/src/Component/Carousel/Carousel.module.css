@@ -3,7 +3,7 @@
   padding: 0;
 }
 .hero__img {
-  position: fixed;
+  position: relative;
 }
 .hero__img::before {
   content: "";
