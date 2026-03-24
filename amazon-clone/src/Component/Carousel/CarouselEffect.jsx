@@ -13,8 +13,8 @@ export default function CarouselEffect() {
         showIndicators={false}
         showThumbs={false}
       >
-        {img.map((imageItemLink) => {
-          return <img src={imageItemLink} alt="con"/>;
+        {img.map((imageItemLink, index) => {
+          return <img key={index} src={imageItemLink} alt="con"/>;
         })}
       </Carousel>
       <div className={Classes.hero__img}></div>

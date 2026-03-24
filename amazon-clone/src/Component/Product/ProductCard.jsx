@@ -1,16 +1,16 @@
 import React from 'react'
 import { Rating } from "@mui/material";
-
+import { Link } from "react-router-dom";
 import Classes from "./Product.module.css"
 
 
 export default function ProductCard({product}) {
-  const {  image,title,  rating, price } = product;
+  const { id, image,title,  rating, price } = product;
   return (
     <div className={Classes.card_container}>
-      <a href='#'>
+      <Link to={`/products/${id}`}>
         <img src={image} alt={title}/>
-      </a>
+      </Link>
       <div>
         <h3>{title}</h3>
         <div className={Classes.rating}>
