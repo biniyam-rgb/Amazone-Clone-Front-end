@@ -1,9 +1,10 @@
 /* Container for all product cards */
-.products_container {
+.products__container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: 20px;
   padding: 30px;
+  align-items: stretch;
 }
 
 /* Product card container */
@@ -12,10 +13,13 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
+  padding: 15px 15px 55px 15px;
   text-align: center;
   transition: transform 0.2s ease;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .card_container:hover {

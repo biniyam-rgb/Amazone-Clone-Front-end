@@ -1,40 +1,41 @@
 import React, { useEffect, useState } from 'react'
-import Classes from './ProductDetail.module.css'
 import LayOut from '../../Component/LayOut/LayOut'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { productUrl } from '../../Api/EndPoint'
+import ProductCard from '../../Component/Product/ProductCard'
+import Loader from '../../Component/Loader/Loader'
 
 export default function ProductDetail() {
   const { productId } = useParams()
-  const [product, setProduct] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  const [product, setProduct] = useState(null);
+  const [isLoading, setisLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true)
-    axios.get(`https://fakestoreapi.com/products/${productId}`)
-      .then(res => {
-        setProduct(res.data)
-        setIsLoading(false)
+    setisLoading(true)
+    axios
+      .get(`${productUrl}/products/${productId}`)
+      .then((res) => {
+        setProduct(res.data);
+        setisLoading(false);
       })
-      .catch(err => {
-        console.log(err)
-        setIsLoading(false)
-      })
-  }, [productId])
+      .catch((err) => {
+        console.log(err);
+        setisLoading(false);
+      });
+  }, [productId]);
 
   return (
     <LayOut>
       {isLoading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className={Classes.product__container}>
-          <img src={product?.image} alt={product?.title} />
-          <div>
-            <h1>{product?.title}</h1>
-            <p>{product?.description}</p>
-            <p>${product?.price?.toFixed(2)}</p>
-          </div>
-        </div>
+        <Loader />
+      ) : product && (
+        <ProductCard
+          product={product}
+          flex={true}
+          renderDesc={true}
+          renderAdd={true}
+        />
       )}
     </LayOut>
   )
