@@ -2,10 +2,20 @@ import React from 'react'
 import { Rating } from "@mui/material";
 import { Link } from "react-router-dom";
 import Classes from "./Product.module.css"
+import { useContext } from 'react'; 
+import { DataContext } from '../DataProvider/DataProvider';
+import { Type } from '../../Utility/Actiontype';
 
 
-export default function ProductCard({product}) {
-  const { id, image,title,  rating, price } = product;
+export default function ProductCard({product,flex}) {
+  const { id, image,title,  rating, price,describtion } = product;
+
+  const [state, dispatch] = useContext(DataContext);
+
+  const addToCart = () => {
+    dispatch({ type: Type.ADD_TO_BASKET, item: { id, image, title, rating, price } });
+  };
+
   return (
     <div className={Classes.card_container}>
       <Link to={`/products/${id}`} style={{ textDecoration: "none", color: "inherit" }}>
@@ -21,7 +31,7 @@ export default function ProductCard({product}) {
           </div>
         </div>
       </Link>
-      <button className={Classes.button}>
+      <button className={Classes.button} onClick={addToCart}>
         add to cart
       </button>
     </div>

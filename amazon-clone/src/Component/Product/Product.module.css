@@ -55,8 +55,7 @@
 /* Description on product detail page */
 .description {
   margin: 15px 0;
-  color: #555;
-  font-size: 14px;
+  color: #555; 
   line-height: 1.4;
 }
 
