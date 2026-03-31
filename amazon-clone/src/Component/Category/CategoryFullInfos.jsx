@@ -1,24 +1,22 @@
 export const Categoryinfos = [
   {
-    title: "electronics",
-    name: "electronics",
-    imgLink:
-      "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_t.png",
+    title: "Smartphones",
+    name: "smartphones",
+    imgLink: "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
   },
   {
-    title: "women's clothing",
-    name: "women's clothing",
-    imgLink: "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_t.png",
+    title: "Laptops",
+    name: "laptops",
+    imgLink: "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
   },
   {
-    title: " men's clothing",
-    name: "men's clothing",
-    imgLink:
-      "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_t.png",
+    title: "Womens Dresses",
+    name: "womens-dresses",
+    imgLink: "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/thumbnail.webp",
   },
   {
-    title: "Jewelery",
-    name: "jewelery",
-    imgLink: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_t.png",
+    title: "Mens Shirts",
+    name: "mens-shirts",
+    imgLink: "https://cdn.dummyjson.com/product-images/mens-shirts/blue-&-black-check-shirt/thumbnail.webp",
   },
 ];

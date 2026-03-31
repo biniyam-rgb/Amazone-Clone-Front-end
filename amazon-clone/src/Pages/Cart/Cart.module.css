@@ -1,0 +1,144 @@
+.cart__container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cart__left {
+  flex: 1;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.empty {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.empty a {
+  color: #007185;
+  font-size: 14px;
+}
+
+.cart__item {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart__item img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.item__title {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.item__price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #B12704;
+}
+
+.item__controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.item__controls button {
+  width: 28px;
+  height: 28px;
+  border: 1px solid #d5d9d9;
+  border-radius: 4px;
+  background: #f0f2f2;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item__controls button:hover {
+  background: #e3e6e6;
+}
+
+.item__controls span {
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}
+
+.cart__right {
+  width: 280px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.cart__right h3 {
+  font-size: 15px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cart__right h3 strong {
+  font-size: 18px;
+}
+
+.checkout__btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #f0c14b;
+  border: 1px solid #a88734;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.checkout__btn:hover {
+  background-color: #ddb347;
+}
+
+@media (max-width: 768px) {
+  .cart__container {
+    flex-direction: column;
+  }
+  .cart__right {
+    width: 100%;
+  }
+}

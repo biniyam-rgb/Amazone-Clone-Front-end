@@ -17,7 +17,13 @@ export default function ProductDetail() {
     axios
       .get(`${productUrl}/products/${productId}`)
       .then((res) => {
-        setProduct(res.data);
+        const p = res.data;
+        // normalize dummyjson shape to match what the component expects
+        setProduct({
+          ...p,
+          image: p.thumbnail,
+          rating: { rate: p.rating, count: p.stock },
+        });
         setisLoading(false);
       })
       .catch((err) => {

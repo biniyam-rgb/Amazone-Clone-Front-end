@@ -6,11 +6,13 @@ import { BiCart } from "react-icons/bi";
 import LowerHeader from './LowerHeader';
 import { Link } from 'react-router-dom';
 import { DataContext } from '../DataProvider/DataProvider';
+import { auth } from '../../firebase';
+import { signOut } from 'firebase/auth';
 
 
 
 export default function Header() {
- const [{basket}, dispatch]=useContext(DataContext) 
+ const [{basket, user}, dispatch]=useContext(DataContext)
   return (
     <section className={Classes.fixed} >
       <div className={Classes.header_container}>
@@ -47,7 +49,7 @@ export default function Header() {
 {/*right side link*/}
         <div className={Classes.order_container}>
   
-<Link to="#" className={Classes.language_selector}>
+<Link to={user ? "#" : "/Auth"} className={Classes.language_selector}>
   <img src="https://cdn.britannica.com/33/4833-050-F6E415FE/Flag-United-States-of-America.jpg" alt="america flag" />
   <select name="" id="">
 <option value="">EN</option>
@@ -55,12 +57,18 @@ export default function Header() {
 </Link>
 {/* three components */}
 
-<Link to="#">
+<Link to={user ? "#" : "/Auth"}>
   <div>
-    <p>Sign In</p>
+    <p>{user ? `Hello, ${user.email.split("@")[0]}` : "Sign In"}</p>
     <span>Account & Lists</span>
   </div>
 </Link>
+
+{user && (
+  <span onClick={() => signOut(auth)} style={{ cursor: "pointer", fontSize: "14px" }}>
+    Sign Out
+  </span>
+)}
 
 {/* orders */}
 <Link to="/Orders">
